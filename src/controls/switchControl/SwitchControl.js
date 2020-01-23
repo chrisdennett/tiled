@@ -4,11 +4,12 @@ import "@material/switch/dist/mdc.switch.css";
 import "@material/form-field/dist/mdc.form-field.css";
 import { Switch } from "@rmwc/switch";
 
-export const SwitchControl = ({ value, onUpdate }) => (
+export const SwitchControl = ({ value, onUpdate, label }) => (
   <StyledSwitch
+    defaultChecked={true}
     checked={value}
     onChange={e => onUpdate(e.currentTarget.checked)}
-    label="Cookies"
+    label={label}
   />
 );
 

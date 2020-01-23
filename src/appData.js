@@ -1,24 +1,47 @@
 export const defaultAppData = {
   title: "Tiles",
-  infoUrl: "https://artfly.io/binary-hands",
+  infoUrl: "https://tiled.artfly.io/",
   settings: {
-    testRange: {
+    isSquare: true,
+    tileWidth: {
       type: "range",
-      min: 1,
-      max: 10,
-      value: 3
+      min: 50,
+      max: 300,
+      value: 100
     },
-    tileWidth: 50,
-    tileHeight: 75,
+    tileHeight: {
+      type: "range",
+      min: 50,
+      max: 300,
+      value: 100
+    },
     selectedTiles: {
-      diagonal1: true,
-      diagonal2: true
+      diagonal1: false,
+      diagonal2: false,
+
+      drawCornerCurves1: false,
+      drawCornerCurves2: false,
+      drawCross: false,
+
+      doubleLoop1: true,
+      doubleLoop2: true,
+      allLoopEnds: true,
+      crossLoops1: true,
+      crossLoops2: true,
+      crossLoopWithEnds: true,
+      downLoopWithEnds: true,
+
+      singleLoopWithEnds1: false,
+      singleLoopWithEnds2: false,
+      singleLoopWithEnds3: false,
+      singleLoopWithEnds4: false
     },
     showGrid: true,
     strokeColour: "#000",
     fillColour: "#fff",
-    tubeColour: "#ff00ff",
-    strokeThickness: 4,
-    groutThickness: 5
+    tubeColour: "#fff",
+    strokeThickness: 2,
+    groutThickness: 15,
+    tileCornerRoundness: 30
   }
 };

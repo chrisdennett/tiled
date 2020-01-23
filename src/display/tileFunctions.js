@@ -37,20 +37,24 @@ export const drawColourTile = (ctx, x, y, width, height, color) => {
   ctx.restore();
 };
 
-const roundedRect = (ctx, x, y, width, height, radius) => {
-  ctx.moveTo(x, y + radius);
-  ctx.lineTo(x, y + height - radius);
-  ctx.arcTo(x, y + height, x + radius, y + height, radius);
-  ctx.lineTo(x + width - radius, y + height);
-  ctx.arcTo(x + width, y + height, x + width, y + height - radius, radius);
-  ctx.lineTo(x + width, y + radius);
-  ctx.arcTo(x + width, y, x + width - radius, y, radius);
-  ctx.lineTo(x + radius, y);
-  ctx.arcTo(x, y, x, y + radius, radius);
-};
+const roundedRect = (ctx, x, y, width, height, radius) => {};
 
-export const drawTileGrout = (ctx, x, y, width, height, color) => {
-  roundedRect(ctx, x, y, width, height, 15);
+export const drawTileGrout = (ctx, x, y, width, height, cornerRadius) => {
+  ctx.moveTo(x, y + cornerRadius);
+  ctx.lineTo(x, y + height - cornerRadius);
+  ctx.arcTo(x, y + height, x + cornerRadius, y + height, cornerRadius);
+  ctx.lineTo(x + width - cornerRadius, y + height);
+  ctx.arcTo(
+    x + width,
+    y + height,
+    x + width,
+    y + height - cornerRadius,
+    cornerRadius
+  );
+  ctx.lineTo(x + width, y + cornerRadius);
+  ctx.arcTo(x + width, y, x + width - cornerRadius, y, cornerRadius);
+  ctx.lineTo(x + cornerRadius, y);
+  ctx.arcTo(x, y, x, y + cornerRadius, cornerRadius);
 };
 
 export const drawCross = (ctx, x, y, width, height, color, strokeThickness) => {

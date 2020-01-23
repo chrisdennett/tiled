@@ -63,7 +63,8 @@ const drawTiles = (canvas, width, height, settings) => {
     fillColour,
     tubeColour,
     strokeThickness,
-    groutThickness
+    groutThickness,
+    tileCornerRoundness
   } = settings;
 
   // only want ids not set to false
@@ -73,25 +74,40 @@ const drawTiles = (canvas, width, height, settings) => {
   );
 
   if (tileOptions.length > 0) {
-    const widthIncGrout = tileWidth + groutThickness;
-    const heightIncGrout = tileHeight + groutThickness;
+    const widthIncGrout = tileWidth.value + groutThickness;
+    const heightIncGrout = tileHeight.value + groutThickness;
 
-    //ctx.beginPath();
-
-    for (let x = 0; x < width; x += widthIncGrout) {
-      for (let y = 0; y < height; y += heightIncGrout) {
-        if (groutThickness > 0) {
-          drawTileGrout(ctx, x, y, tileWidth, tileHeight, "#000");
+    // draw grout as a clipping path
+    if (groutThickness > 0) {
+      for (let x = 0; x < width; x += widthIncGrout) {
+        for (let y = 0; y < height; y += heightIncGrout) {
+          if (groutThickness > 0) {
+            drawTileGrout(
+              ctx,
+              x,
+              y,
+              tileWidth.value,
+              tileHeight.value,
+              tileCornerRoundness
+            );
+          }
         }
       }
+      ctx.clip();
     }
 
-    ctx.clip();
-
+    //
     for (let x = 0; x < width; x += widthIncGrout) {
       for (let y = 0; y < height; y += heightIncGrout) {
         // const randColourSet = getRandomBlackAndWhiteSet();
-        drawColourTile(ctx, x, y, tileWidth, tileHeight, fillColour);
+        drawColourTile(
+          ctx,
+          x,
+          y,
+          tileWidth.value,
+          tileHeight.value,
+          fillColour
+        );
       }
     }
 
@@ -103,8 +119,8 @@ const drawTiles = (canvas, width, height, settings) => {
           ctx,
           x,
           y,
-          tileWidth,
-          tileHeight,
+          tileWidth.value,
+          tileHeight.value,
           strokeColour,
           strokeThickness,
           tubeColour
