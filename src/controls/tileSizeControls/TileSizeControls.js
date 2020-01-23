@@ -35,53 +35,47 @@ const TileSizeControls = ({ appData, onUpdate }) => {
   return (
     <Container>
       <SwitchControl
-        label={"Use Square Tile"}
-        checked={settings.isSquare}
-        onUpdate={value => updateBoolean("isSquare", value)}
+        label={"Separate Width and Height"}
+        checked={settings.separateWidthAndHeight}
+        onUpdate={value => updateBoolean("separateWidthAndHeight", value)}
       />
 
-      {settings.isSquare ? (
-        <SlicerHolder>
+      {settings.separateWidthAndHeight ? (
+        <>
           <SliderControl
             labelStyle={{ minWidth: 150 }}
-            label={"Tile Size:"}
+            label={"Tile Width:"}
             displayValue={true}
             step={1}
             min={tileWidth.min}
             max={tileWidth.max}
             value={tileWidth.value}
-            onChange={value =>
-              updateMultipleRanges("tileWidth", "tileHeight", value)
-            }
+            onChange={value => updateRange("tileWidth", value)}
           />
-        </SlicerHolder>
-      ) : (
-        <>
-          <SlicerHolder>
-            <SliderControl
-              labelStyle={{ minWidth: 150 }}
-              label={"Tile Width:"}
-              displayValue={true}
-              step={1}
-              min={tileWidth.min}
-              max={tileWidth.max}
-              value={tileWidth.value}
-              onChange={value => updateRange("tileWidth", value)}
-            />
-          </SlicerHolder>
-          <SlicerHolder>
-            <SliderControl
-              labelStyle={{ minWidth: 150 }}
-              label={"Tile Height:"}
-              displayValue={true}
-              step={1}
-              min={tileHeight.min}
-              max={tileHeight.max}
-              value={tileHeight.value}
-              onChange={value => updateRange("tileHeight", value)}
-            />
-          </SlicerHolder>
+          <SliderControl
+            labelStyle={{ minWidth: 150 }}
+            label={"Tile Height:"}
+            displayValue={true}
+            step={1}
+            min={tileHeight.min}
+            max={tileHeight.max}
+            value={tileHeight.value}
+            onChange={value => updateRange("tileHeight", value)}
+          />
         </>
+      ) : (
+        <SliderControl
+          labelStyle={{ minWidth: 150 }}
+          label={"Tile Size:"}
+          displayValue={true}
+          step={1}
+          min={tileWidth.min}
+          max={tileWidth.max}
+          value={tileWidth.value}
+          onChange={value =>
+            updateMultipleRanges("tileWidth", "tileHeight", value)
+          }
+        />
       )}
     </Container>
   );
@@ -93,8 +87,4 @@ const Container = styled.div`
   height: 100%;
   background: black;
   color: white;
-`;
-
-const SlicerHolder = styled.div`
-  padding: 0 15px;
 `;

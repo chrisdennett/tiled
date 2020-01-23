@@ -37,8 +37,6 @@ export const drawColourTile = (ctx, x, y, width, height, color) => {
   ctx.restore();
 };
 
-const roundedRect = (ctx, x, y, width, height, radius) => {};
-
 export const drawTileGrout = (
   ctx,
   x,

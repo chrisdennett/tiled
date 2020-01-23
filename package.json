@@ -3,6 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rmwc/icon-button": "^5.7.2",
+    "@rmwc/select": "^5.7.2",
     "@rmwc/switch": "^5.7.2",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",

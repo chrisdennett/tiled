@@ -2,23 +2,30 @@ import React, { useState } from "react";
 import styled from "styled-components";
 // comps
 import TabControls from "./tabControls/TabControls";
+import TileTypeControls from "./tileTypeControls/TileTypeControls";
 import TileSizeControls from "./tileSizeControls/TileSizeControls";
 import GroutControls from "./groutControls/GroutControls";
 
 const Controls = ({ appData, onUpdate }) => {
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(0);
 
   return (
     <Container>
       <TabControls activeTab={activeTab} onUpdate={setActiveTab} />
 
-      {activeTab === 1 && (
-        <TileSizeControls appData={appData} onUpdate={onUpdate} />
-      )}
+      <ControlsUI>
+        {activeTab === 0 && (
+          <TileTypeControls appData={appData} onUpdate={onUpdate} />
+        )}
 
-      {activeTab === 2 && (
-        <GroutControls appData={appData} onUpdate={onUpdate} />
-      )}
+        {activeTab === 1 && (
+          <TileSizeControls appData={appData} onUpdate={onUpdate} />
+        )}
+
+        {activeTab === 2 && (
+          <GroutControls appData={appData} onUpdate={onUpdate} />
+        )}
+      </ControlsUI>
     </Container>
   );
 };
@@ -31,6 +38,6 @@ const Container = styled.div`
   color: white;
 `;
 
-const SlicerHolder = styled.div`
-  padding: 0 15px;
+const ControlsUI = styled.div`
+  margin: 15px;
 `;
