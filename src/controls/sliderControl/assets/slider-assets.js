@@ -77,7 +77,7 @@ export function Handle({
           height: 24,
           borderRadius: "50%",
           boxShadow: "1px 1px 1px 1px rgba(0, 0, 0, 0.3)",
-          backgroundColor: disabled ? "#666" : "#ffc400"
+          backgroundColor: disabled ? "#666" : "#fff"
         }}
       />
     </Fragment>

@@ -15,6 +15,19 @@ export const defaultAppData = {
       max: 300,
       value: 100
     },
+    groutThickness: {
+      type: "range",
+      min: 0,
+      max: 40,
+      value: 3
+    },
+    tileCornerRoundness: {
+      type: "range",
+      step: 0.01,
+      min: 0,
+      max: 1,
+      value: 0.17
+    },
     selectedTiles: {
       diagonal1: false,
       diagonal2: false,
@@ -40,8 +53,6 @@ export const defaultAppData = {
     strokeColour: "#000",
     fillColour: "#fff",
     tubeColour: "#fff",
-    strokeThickness: 2,
-    groutThickness: 15,
-    tileCornerRoundness: 30
+    strokeThickness: 2
   }
 };

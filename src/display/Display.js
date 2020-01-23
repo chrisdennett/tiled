@@ -1,17 +1,24 @@
 import React, { useEffect } from "react";
+import { useThrottle } from "react-use";
 import styled from "styled-components";
 import { drawColourTile, drawRandomTile, drawTileGrout } from "./tileFunctions";
 
 const Display = ({ sizeInfo, appData }) => {
   const canvasRef = React.useRef(null);
   const { settings } = appData;
+  const throttledSettings = useThrottle(settings, 100);
 
   useEffect(() => {
     update();
   });
 
   const update = () => {
-    drawTiles(canvasRef.current, sizeInfo.width, sizeInfo.height, settings);
+    drawTiles(
+      canvasRef.current,
+      sizeInfo.width,
+      sizeInfo.height,
+      throttledSettings
+    );
   };
 
   return (
@@ -74,21 +81,21 @@ const drawTiles = (canvas, width, height, settings) => {
   );
 
   if (tileOptions.length > 0) {
-    const widthIncGrout = tileWidth.value + groutThickness;
-    const heightIncGrout = tileHeight.value + groutThickness;
+    const widthIncGrout = tileWidth.value + groutThickness.value;
+    const heightIncGrout = tileHeight.value + groutThickness.value;
 
     // draw grout as a clipping path
-    if (groutThickness > 0) {
+    if (groutThickness.value > 0) {
       for (let x = 0; x < width; x += widthIncGrout) {
         for (let y = 0; y < height; y += heightIncGrout) {
-          if (groutThickness > 0) {
+          if (groutThickness.value > 0) {
             drawTileGrout(
               ctx,
               x,
               y,
               tileWidth.value,
               tileHeight.value,
-              tileCornerRoundness
+              tileCornerRoundness.value
             );
           }
         }

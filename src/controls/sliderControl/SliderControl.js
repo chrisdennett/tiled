@@ -16,6 +16,7 @@ const SliderControl = ({
   value,
   values,
   onChange,
+  disabled,
   showTicks = false,
   min = 0,
   max = 1,
@@ -35,14 +36,11 @@ const SliderControl = ({
 
   return (
     <div style={{ height: 50, width: "100%" }}>
-      <SliderLabel
-        use={"button"}
-        tag={"div"}
-        className={"sliderControl--label"}
-      >
+      <SliderLabel disabled={disabled}>
         {label} {displayValue && values}
       </SliderLabel>
       <Slider
+        disabled={disabled}
         mode={2}
         step={step}
         domain={domain}
@@ -58,6 +56,7 @@ const SliderControl = ({
             <div className="slider-handles">
               {handles.map(handle => (
                 <Handle
+                  disabled={disabled}
                   key={handle.id}
                   handle={handle}
                   domain={domain}
@@ -105,4 +104,5 @@ const SliderLabel = styled.div`
   text-transform: uppercase;
   font-size: 12px;
   min-height: 30px;
+  color: rgba(255, 255, 255, 0.5);
 `;

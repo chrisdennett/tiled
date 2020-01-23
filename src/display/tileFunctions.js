@@ -39,7 +39,16 @@ export const drawColourTile = (ctx, x, y, width, height, color) => {
 
 const roundedRect = (ctx, x, y, width, height, radius) => {};
 
-export const drawTileGrout = (ctx, x, y, width, height, cornerRadius) => {
+export const drawTileGrout = (
+  ctx,
+  x,
+  y,
+  width,
+  height,
+  cornerRadiusDecimal
+) => {
+  const cornerRadius = (width / 2) * cornerRadiusDecimal;
+
   ctx.moveTo(x, y + cornerRadius);
   ctx.lineTo(x, y + height - cornerRadius);
   ctx.arcTo(x, y + height, x + cornerRadius, y + height, cornerRadius);
