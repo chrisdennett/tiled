@@ -7,17 +7,17 @@ export const defaultAppData = {
       type: "range",
       min: 10,
       max: 300,
-      value: 20
+      value: 80
     },
     tileHeight: {
       type: "range",
       min: 10,
       max: 300,
-      value: 20
+      value: 80
     },
     groutThickness: {
       type: "range",
-      min: 0,
+      min: 1,
       max: 40,
       value: 0
     },

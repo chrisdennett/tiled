@@ -5,6 +5,7 @@ import "@material/tab/dist/mdc.tab.css";
 import "@material/tab-scroller/dist/mdc.tab-scroller.css";
 import "@material/tab-indicator/dist/mdc.tab-indicator.css";
 import { TabBar, Tab } from "@rmwc/tabs";
+import { TiWarning } from "react-icons/ti";
 
 const TabControls = ({ activeTab, onUpdate }) => {
   return (
@@ -15,7 +16,9 @@ const TabControls = ({ activeTab, onUpdate }) => {
       >
         <Tab>Tiles</Tab>
         <Tab>Size</Tab>
-        <Tab>Grout</Tab>
+        <Tab>
+          <TiWarning /> Grout <TiWarning />
+        </Tab>
       </StyledTabBar>
     </div>
   );
