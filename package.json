@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@rmwc/checkbox": "^5.7.2",
     "@rmwc/icon-button": "^5.7.2",
     "@rmwc/select": "^5.7.2",
     "@rmwc/switch": "^5.7.2",

@@ -36,6 +36,7 @@ const TileSizeControls = ({ appData, onUpdate }) => {
     <Container>
       <SwitchControl
         label={"Separate Width and Height"}
+        defaultChecked={settings.separateWidthAndHeight}
         checked={settings.separateWidthAndHeight}
         onUpdate={value => updateBoolean("separateWidthAndHeight", value)}
       />

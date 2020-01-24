@@ -19,7 +19,7 @@ function App() {
           {sizeInfo => <DisplayCanvas sizeInfo={sizeInfo} appData={appData} />}
         </Space.Info>
       </Space.Fill>
-      <Space.BottomResizable size={210} scrollable={true}>
+      <Space.BottomResizable size={260} scrollable={true}>
         <Controls onUpdate={setAppData} appData={appData} />
       </Space.BottomResizable>
     </Space.ViewPort>

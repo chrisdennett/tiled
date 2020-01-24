@@ -1,7 +1,11 @@
 import React, { useEffect } from "react";
 import { useThrottle } from "react-use";
 import styled from "styled-components";
-import { drawColourTile, drawRandomTile, drawTileGrout } from "./tileFunctions";
+import {
+  drawColourTile,
+  drawRandomTile,
+  drawTileGrout
+} from "../helpers/tileFunctions";
 
 const Display = ({ sizeInfo, appData }) => {
   const canvasRef = React.useRef(null);

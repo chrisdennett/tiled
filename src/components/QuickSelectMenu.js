@@ -28,8 +28,6 @@ const QuickSelectMenu = ({ currentOptionKey, options, onUpdate }) => {
       key => options[key].name === optionName
     )[0];
 
-    console.log("optionKey: ", optionKey);
-
     onUpdate(optionKey);
   };
 
@@ -56,6 +54,7 @@ const QuickSelectMenu = ({ currentOptionKey, options, onUpdate }) => {
 export default QuickSelectMenu;
 
 const Container = styled.div`
+  display: inline-block;
   /* .mdc-select:not(.mdc-select--disabled).mdc-select--focused
     .mdc-floating-label {
     color: white;

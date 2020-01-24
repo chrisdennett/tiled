@@ -17,8 +17,6 @@ const GroutControls = ({ appData, onUpdate }) => {
     });
   };
 
-  console.log(groutThickness.value);
-
   return (
     <Container>
       <p>

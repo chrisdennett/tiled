@@ -32,6 +32,7 @@ export const drawRandomTile = (
 export const drawColourTile = (ctx, x, y, width, height, color) => {
   ctx.save();
   ctx.fillStyle = color === "random" ? getRandomColour(75, 35) : color;
+  //ctx.fillStyle = getRandomColour(75, 35);
 
   ctx.fillRect(x, y, width, height);
   ctx.restore();
