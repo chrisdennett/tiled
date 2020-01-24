@@ -41,6 +41,7 @@ const HelpInfoLink = styled(ExternalLink)`
   font-weight: bold;
   border-radius: 5px;
   text-decoration: none;
+  margin-right: 5px;
 
   svg {
     fill: white;
@@ -55,11 +56,12 @@ const Container = styled.div`
   background: black;
   color: white;
   display: flex;
-  padding: 0 15px;
   align-items: center;
+  height: 60px;
 `;
 
 const Title = styled.h1`
+  margin: 0;
   font-size: 1.5rem;
   text-align: center;
   flex: 1;
@@ -77,4 +79,5 @@ const StyledButton = styled.button`
   /* color: white; */
   cursor: pointer;
   user-select: none;
+  margin-left: 10px;
 `;
