@@ -1,6 +1,6 @@
 export const defaultAppData = {
-  title: "Tiles",
-  infoUrl: "https://tiled.artfly.io/",
+  title: "TILES",
+  infoUrl: "https://artfly.io/generative-tiles",
   settings: {
     separateWidthAndHeight: false,
     tileWidth: {
