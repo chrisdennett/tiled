@@ -24,9 +24,8 @@ const TileOptions = ({ tileKeys, appData, onUpdate }) => {
     <Container>
       {tileKeys.map(key => {
         return (
-          <TileSelectorHolder>
+          <TileSelectorHolder key={key}>
             <TileSelector
-              key={key}
               tileWidth={40}
               tileHeight={40}
               tubeColour={tubeColour}

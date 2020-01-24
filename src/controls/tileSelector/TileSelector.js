@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
 import "@material/checkbox/dist/mdc.checkbox.css";
 import "@material/form-field/dist/mdc.form-field.css";
 import { Checkbox } from "@rmwc/checkbox";
@@ -34,13 +35,25 @@ const TileSelector = ({
   });
 
   return (
-    <Checkbox
+    <StyledCheckbox
       checked={selected || false}
       onChange={e => onUpdate(e.target.checked)}
     >
       <canvas ref={canvasRef} width={tileWidth} height={tileHeight} />
-    </Checkbox>
+    </StyledCheckbox>
   );
 };
 
 export default TileSelector;
+
+const StyledCheckbox = styled(Checkbox)`
+  font-size: 42px;
+  .mdc-checkbox__checkmark {
+    color: black;
+  }
+
+  .mdc-checkbox__native-control:enabled:checked ~ .mdc-checkbox__background {
+    background-color: white;
+    border: white 1px solid;
+  }
+`;

@@ -60,6 +60,16 @@ const Container = styled.div`
     color: white;
   } */
 
+  .mdc-select {
+    option {
+      color: black;
+    }
+
+    .mdc-select__dropdown-icon {
+      display: none;
+    }
+  }
+
   .mdc-select:not(.mdc-select--disabled) {
     background: black;
 
@@ -81,26 +91,8 @@ const Container = styled.div`
     }
 
     .mdc-floating-label {
-      color: rgba(255, 255, 255, 0.7);
+      color: rgba(255, 255, 255, 0.7) !important;
     }
-
-    .mdc-select--focused .mdc-floating-label {
-      color: white;
-    }
-
-    /* .mdc-select__native-control {
-      color: white;
-    }
-
-    .mdc-floating-label {
-      color: rgba(255, 255, 255, 0.7);
-    }
-
-    .mdc-select--focused {
-      .mdc-floating-label {
-        color: rgba(255, 255, 255, 0.7) !important;
-      }
-    } */
   }
 `;
 
