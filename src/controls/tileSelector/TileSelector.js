@@ -29,7 +29,7 @@ const TileSelector = ({
       tileWidth,
       tileHeight,
       stroke,
-      strokeThickness,
+      strokeThickness.value,
       tubeColour
     );
   });

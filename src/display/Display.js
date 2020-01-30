@@ -134,7 +134,7 @@ const drawTiles = (canvas, width, height, settings) => {
           tileWidth.value,
           tileHeight.value,
           strokeColour,
-          strokeThickness,
+          strokeThickness.value,
           tubeColour
         );
       }

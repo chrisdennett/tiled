@@ -44,15 +44,15 @@ const TileTypeControls = ({ appData, onUpdate }) => {
         options={presets}
         onUpdate={updatePreset}
       />
+      <Description>
+        <strong>{currentPresetData.name}: </strong>
+        {currentPresetData.description}
+      </Description>
       <TileOptions
         tileKeys={currentPresetData.keys}
         appData={appData}
         onUpdate={onUpdate}
       />
-      <Description>
-        <strong>{currentPresetData.name}: </strong>
-        {currentPresetData.description}
-      </Description>
     </Container>
   );
 };

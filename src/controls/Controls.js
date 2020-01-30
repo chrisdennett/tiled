@@ -4,10 +4,11 @@ import styled from "styled-components";
 import TabControls from "./tabControls/TabControls";
 import TileTypeControls from "./tileTypeControls/TileTypeControls";
 import TileSizeControls from "./tileSizeControls/TileSizeControls";
+import StyleControls from "./styleControls/StyleControls";
 import GroutControls from "./groutControls/GroutControls";
 
 const Controls = ({ appData, onUpdate }) => {
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(2);
 
   return (
     <Container>
@@ -23,6 +24,10 @@ const Controls = ({ appData, onUpdate }) => {
         )}
 
         {activeTab === 2 && (
+          <StyleControls appData={appData} onUpdate={onUpdate} />
+        )}
+
+        {activeTab === 3 && (
           <GroutControls appData={appData} onUpdate={onUpdate} />
         )}
       </ControlsUI>

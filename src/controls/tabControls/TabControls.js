@@ -16,6 +16,7 @@ const TabControls = ({ activeTab, onUpdate }) => {
       >
         <Tab>Tiles</Tab>
         <Tab>Size</Tab>
+        <Tab>Style</Tab>
         <Tab>
           <TiWarning /> Grout <TiWarning />
         </Tab>

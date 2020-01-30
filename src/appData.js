@@ -3,6 +3,15 @@ export const defaultAppData = {
   infoUrl: "https://artfly.io/generative-tiles",
   settings: {
     separateWidthAndHeight: false,
+    strokeColour: "#000",
+    fillColour: "#fff",
+    tubeColour: "#fff",
+    strokeThickness: {
+      type: "range",
+      min: 1,
+      max: 10,
+      value: 2
+    },
     tileWidth: {
       type: "range",
       min: 10,
@@ -32,21 +41,21 @@ export const defaultAppData = {
     presets: {
       diagonals: {
         number: 1,
-        name: "Diagonals",
+        name: "2 Diagonals",
         keys: ["diagonal1", "diagonal2"],
         description:
           "Simply randomising tiles containing the 2 possible diagonal lines gives a surprisingly pleasing result.  Try deselecting and reselecting one of the tiles to flip from order to art over and over! Touch or click on the pattern to generate a new combination."
       },
       fourEdgeConnections: {
         number: 2,
-        name: "Four Edge Connections",
+        name: "4 Edge Connections",
         keys: ["drawCross", "drawCornerCurves1", "drawCornerCurves2"],
         description:
           "Here we've got three variations, giving a greater range of possibilities, but I reckon it's still nice with any two of them."
       },
       EightEdgeConnections: {
         number: 3,
-        name: "Eight Edge Connections",
+        name: "8 Edge Connections",
         keys: [
           "doubleLoop1",
           "doubleLoop2",
@@ -83,11 +92,6 @@ export const defaultAppData = {
       singleLoopWithEnds2: false,
       singleLoopWithEnds3: false,
       singleLoopWithEnds4: false
-    },
-    showGrid: true,
-    strokeColour: "#000",
-    fillColour: "#fff",
-    tubeColour: "#fff",
-    strokeThickness: 2
+    }
   }
 };

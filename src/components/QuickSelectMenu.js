@@ -38,6 +38,7 @@ const QuickSelectMenu = ({ currentOptionKey, options, onUpdate }) => {
       </NavButton>
 
       <Select
+        style={{ maxWidth: 170 }}
         value={options[currentOptionKey].name}
         label="Tile Group"
         onChange={onSelect}
