@@ -64,6 +64,5 @@ export default GroutControls;
 
 const Container = styled.div`
   height: 100%;
-  background: black;
   color: white;
 `;

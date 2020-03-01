@@ -72,7 +72,7 @@ const Container = styled.div`
   }
 
   .mdc-select:not(.mdc-select--disabled) {
-    background: black;
+    background: #3e3e3e;
 
     .mdc-select__native-control {
       border-color: white;
@@ -101,6 +101,6 @@ const NavButton = styled.button`
   padding: 10px;
   font-size: 24px;
   border: none;
-  background: black;
+  background: #3e3e3e;
   color: white;
 `;

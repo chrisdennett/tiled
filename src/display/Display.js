@@ -28,7 +28,7 @@ const Display = ({ sizeInfo, appData }) => {
   return (
     <Container>
       <CanvasHolder left={0} top={0}>
-        <canvas ref={canvasRef} onClick={update} />
+        <canvas ref={canvasRef} onClick={update} className="mainSVG" />
       </CanvasHolder>
     </Container>
   );
