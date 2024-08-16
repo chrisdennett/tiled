@@ -11,7 +11,7 @@ import StyleControls from "./styleControls/StyleControls";
 import GroutControls from "./groutControls/GroutControls";
 
 const Controls = ({ appData, onUpdate }) => {
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(0);
 
   const onSaveSvgClick = ({ name = "tiles-art", svgClass = "mainSVG" }) => {
     let full_svg = document.getElementsByClassName(svgClass)[0].outerHTML;
